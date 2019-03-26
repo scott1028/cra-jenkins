@@ -11,12 +11,12 @@ node {
             sh """
                 wget https://nodejs.org/dist/v8.11.3/node-v8.11.3-linux-x64.tar.xz
                 tar -vxf node-v8.11.3-linux-x64.tar.xz
-                export PATH=`pwd`/node-v8.11.3-linux-x64/bin:$PATH
+                export PATH="`pwd`/node-v8.11.3-linux-x64/bin:$PATH"
             """
 
         stage 'Npm install'
             sh """
-                export PATH=`pwd`/node-v8.11.3-linux-x64/bin:$PATH
+                export PATH="`pwd`/node-v8.11.3-linux-x64/bin:$PATH"
                 npm install
             """
 
@@ -30,7 +30,7 @@ node {
 
         stage 'Build'
             sh """
-                export PATH=`pwd`/node-v8.11.3-linux-x64/bin:$PATH
+                export PATH="`pwd`/node-v8.11.3-linux-x64/bin:$PATH"
                 npm run build
             """
 
