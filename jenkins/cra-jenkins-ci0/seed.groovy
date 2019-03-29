@@ -1,6 +1,6 @@
 def folderName = 'cra-jenkins-ci0'
 try {
-  pipelineJob('${folderName}') {
+  pipelineJob(folderName) {
     definition {
       cpsScm {
         scm {
@@ -9,7 +9,7 @@ try {
             'master'
           )
         }
-        scriptPath('src/jenkins/${folderName}/Jenkinsfile')
+        scriptPath('src/jenkins/folderName/Jenkinsfile')
       }
     }
   }
