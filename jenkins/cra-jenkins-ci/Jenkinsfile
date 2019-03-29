@@ -37,16 +37,20 @@ node {
         stage 'Notify Slack'
           def attachments = [
             [
-                text: 'I find your lack of faith disturbing!',
-                fallback: 'Hey, Vader seems to be mad at you.',
+                text: 'Success! This is from Rogers Mac!',
                 color: '#5afa60'
             ]
           ]
-
           slackSend(attachments: attachments)
     } catch (err) {
-
-        throw err
+      def attachments = [
+        [
+            text: 'Failed! This is from Rogers Mac!',
+            color: 'rgb(250, 40, 71)'
+        ]
+      ]
+      slackSend(attachments: attachments)
+      throw err
 
     } finally {
        sh """
