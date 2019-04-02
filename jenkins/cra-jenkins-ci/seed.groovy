@@ -5,7 +5,7 @@ try {
       cpsScm {
         scm {
           git(
-            "https://github.com/Dkra/cra-jenkins",
+            "https://github.com/scott1028/cra-jenkins.git",
             "master"
           )
         }
